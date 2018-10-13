@@ -1,0 +1,42 @@
+#!/bin/bash
+str="test"
+mkdir tests
+cd tests/
+mkdir core/
+cd core/
+for value in {0..30}
+do
+   cp ~kmammen-grader/evaluations/F18/357/$1/tests/core/test0$value/description .
+   mv description description$value
+   if [ $value -lt 10 ]
+      then
+         echo we Made it
+         cp ~kmammen-grader/evaluations/F18/357/$1/tests/core/test0$value/description .
+         mv description description$value
+      else
+         cp ~kmammen-grader/evaluations/F18/357/$1/tests/core/test$value/description .
+         mv description description$value
+   fi
+done
+
+cd ..
+mkdir feature/
+cd feature/
+for value in {0..30}
+do
+   cp ~kmammen-grader/evaluations/F18/357/$1/tests/feature/test0$value/description .
+   mv description description$value
+   if [ $value -lt 10 ]
+      then
+         cp ~kmammen-grader/evaluations/F18/357/$1/tests/feature/test0$value/description .
+         mv description description$value
+      else
+         cp ~kmammen-grader/evaluations/F18/357/$1/tests/feature/test$value/description .
+         mv description description$value
+   fi
+done
+
+cd ..
+cd ..
+
+
